@@ -23,3 +23,9 @@ class TestCar(unittest.TestCase):
         result = self.temp.getEngineTemperature()
         self.assertEqual(result, 80)
 
+    @patch.object(Car, 'driveTo')
+    def test_driveTo_patch(self, mock_method):
+        mock_method.return_value = "Las Vegas"
+        result = self.temp.driveTo("Las Vegas")
+        self.assertEqual(result, "Las Vegas")
+
