@@ -29,3 +29,6 @@ class TestCar(unittest.TestCase):
         result = self.temp.driveTo("Las Vegas")
         self.assertEqual(result, "Las Vegas")
 
+
+if __name__ == '__main__':
+    unittest.main()
