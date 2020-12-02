@@ -16,5 +16,10 @@ class TestCar(unittest.TestCase):
         self.temp.needsFuel = Mock(name='needsFuel')
         self.temp.needsFuel.return_value = False
         self.assertEqual(self.temp.needsFuel(), False)
-        
+
+    @patch.object(Car, 'getEngineTemperature')
+    def test_getEngineTemperature_patch(self, mock_method):
+        mock_method.return_value = 80
+        result = self.temp.getEngineTemperature()
+        self.assertEqual(result, 80)
 
