@@ -22,3 +22,7 @@ class TestChecker(unittest.TestCase):
         self.temp.laptop.wavWasPlayed.return_value = True
         result = self.temp.reset("song.mp3")
         self.assertEqual(result, True)
+
+
+if __name__ == '__main__':
+    unittest.main()
